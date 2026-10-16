@@ -49,9 +49,18 @@ export interface TraceExporter {
   export(trace: Trace): Promise<void> | void;
 }
 
+export interface ConsoleExporterOptions {
+  logger?: (message: string) => void;
+  colors?: boolean;
+  animate?: boolean;
+  animationDelayMs?: number;
+  width?: number;
+}
+
 export interface TracerOptions {
   exporter?: TraceExporter | null;
   defaultMetadata?: Record<string, unknown>;
+  consoleExporterOptions?: ConsoleExporterOptions;
 }
 
 export type TraceCallback<T, R = any> = (run: R) => T | Promise<T>;
