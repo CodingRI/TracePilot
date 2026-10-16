@@ -55,12 +55,12 @@ const result = await tracer.trace("research-agent", async (run) => {
 When run, TracePilot automatically outputs a clean visual execution tree:
 
 ```text
-[TracePilot] research-agent
-├─ vector-search               120ms ✓
-└─ llm-synthesis               840ms ✓
-
-Total: 962ms
-Status: success
+╭── [TracePilot] research-agent ────────────────────────────────────────────
+│  ├─ vector-search                    120ms ✓
+│  └─ llm-synthesis                    840ms ✓
+├─────────────────────────────────────────────────────────────────────────────
+│  Status: success   •   Total: 962ms   •   Spans: 2 recorded
+╰─────────────────────────────────────────────────────────────────────────────
 ```
 
 ## Spans

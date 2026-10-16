@@ -46,6 +46,14 @@
   ],
   "author": "codingri",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CodingRI/TracePilot.git"
+  },
+  "homepage": "https://github.com/CodingRI/TracePilot#readme",
+  "bugs": {
+    "url": "https://github.com/CodingRI/TracePilot/issues"
+  },
   "devDependencies": {
     "@types/node": "^26.6.4",
     "tsup": "^8.5.1",

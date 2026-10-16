@@ -1,0 +1,27 @@
+name: Package Health & Install Verification
+
+on:
+  schedule:
+    - cron: '*/45 * * * *'
+  workflow_dispatch:
+
+jobs:
+  verify-install:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install and smoke test package
+        run: |
+          mkdir /tmp/smoke-test
+          cd /tmp/smoke-test
+          npm init -y
+          npm install --prefer-online @codingri/tracepilot
+          node -e "
+            const { createTracer } = require('@codingri/tracepilot');
+            if (typeof createTracer !== 'function') throw new Error('createTracer export missing');
+            console.log('Smoke test passed: @codingri/tracepilot installed and verified cleanly.');
+          "
