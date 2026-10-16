@@ -1,6 +1,9 @@
 {
-  "name": "tracepilot",
+  "name": "@codingri/tracepilot",
   "version": "0.1.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "Lightweight, framework-agnostic observability and tracing SDK for AI agents.",
   "type": "module",
   "main": "./dist/index.js",
@@ -41,7 +44,7 @@
     "telemetry",
     "spans"
   ],
-  "author": "",
+  "author": "codingri",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^26.6.4",
