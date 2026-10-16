@@ -16,7 +16,7 @@ export class Tracer {
     } else if (options.exporter !== undefined) {
       this.exporter = options.exporter;
     } else {
-      this.exporter = new ConsoleExporter();
+      this.exporter = new ConsoleExporter(options.consoleExporterOptions);
     }
     this.defaultMetadata = { ...(options.defaultMetadata ?? {}) };
   }
